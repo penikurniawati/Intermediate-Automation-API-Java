@@ -1,0 +1,12 @@
+Request method:	GET
+2Request URI:	http://localhost:8086/v1/users?name=
+Proxy:			<none>
+Request params:	<none>
+Query params:	name=
+Form params:	<none>
+Path params:	<none>
+"Headers:		accept=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+Hendri

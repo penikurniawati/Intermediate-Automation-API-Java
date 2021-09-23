@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.koligrum.test.UserTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-09-17T16:19:37" hostname="192.168.1.5" time="1.863">
+  <properties/>
+  <testcase name="test" classname="com.koligrum.test.UserTest" time="1.863"/>
+  <system-out><![CDATA[Request method:	GET
+Request URI:	http://localhost:8086/v1/users?name=
+Proxy:			<none>
+Request params:	<none>
+Query params:	name=
+Form params:	<none>
+Path params:	<none>
+Headers:		accept=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+Hendri
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
