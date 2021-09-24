@@ -1,12 +1,13 @@
-Request method:	GET
-2Request URI:	http://localhost:8086/v1/users?name=
+Request method:	DELETE
+QRequest URI:	http://localhost:1234/v1/users/201e96ba-d197-4d33-b74b-9f545f1e4cfc
 Proxy:			<none>
 Request params:	<none>
-Query params:	name=
+Query params:	<none>
 Form params:	<none>
-Path params:	<none>
+5Path params:	id=201e96ba-d197-4d33-b74b-9f545f1e4cfc
 "Headers:		accept=application/json
+1				Content-Type=application/json; charset=UTF-8
 Cookies:		<none>
 Multiparts:		<none>
 Body:			<none>
-Hendri
+

@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.koligrum.test.UserTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-09-17T16:19:37" hostname="192.168.1.5" time="1.863">
+<testsuite name="com.koligrum.test.UserTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-09-24T01:46:05" hostname="ip-192-168-18-9.ap-southeast-1.compute.internal" time="1.292">
   <properties/>
-  <testcase name="test" classname="com.koligrum.test.UserTest" time="1.863"/>
-  <system-out><![CDATA[Request method:	GET
-Request URI:	http://localhost:8086/v1/users?name=
+  <testcase name="deleteUserById" classname="com.koligrum.test.UserTest" time="1.292"/>
+  <system-out><![CDATA[Request method:	DELETE
+Request URI:	http://localhost:1234/v1/users/201e96ba-d197-4d33-b74b-9f545f1e4cfc
 Proxy:			<none>
 Request params:	<none>
-Query params:	name=
+Query params:	<none>
 Form params:	<none>
-Path params:	<none>
+Path params:	id=201e96ba-d197-4d33-b74b-9f545f1e4cfc
 Headers:		accept=application/json
+				Content-Type=application/json; charset=UTF-8
 Cookies:		<none>
 Multiparts:		<none>
 Body:			<none>
-Hendri
+
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
