@@ -1,0 +1,157 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "http://example.com/example.json",
+  "type": "object",
+  "title": "The root schema",
+  "description": "The root schema comprises the entire JSON document.",
+  "default": {},
+  "examples": [
+    {
+      "id": "2bc24e68-b865-409a-9501-80856dd3a2f1",
+      "firstName": "Peni",
+      "lastName": "Kurniawati",
+      "age": 23,
+      "occupation": "Quality Assurance",
+      "nationality": "Indonesia",
+      "hobbies": [
+        "Cooking"
+      ],
+      "gender": "FEMALE",
+      "createdDate": "2021-09-25T14:54:29.418",
+      "updatedDate": null
+    }
+  ],
+  "required": [
+    "id",
+    "firstName",
+    "lastName",
+    "age",
+    "occupation",
+    "nationality",
+    "hobbies",
+    "gender",
+    "createdDate",
+    "updatedDate"
+  ],
+  "properties": {
+    "id": {
+      "$id": "#/properties/id",
+      "type": "string",
+      "title": "The id schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": "",
+      "examples": [
+        "2bc24e68-b865-409a-9501-80856dd3a2f1"
+      ]
+    },
+    "firstName": {
+      "$id": "#/properties/firstName",
+      "type": "string",
+      "title": "The firstName schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": "",
+      "examples": [
+        "Peni"
+      ]
+    },
+    "lastName": {
+      "$id": "#/properties/lastName",
+      "type": "string",
+      "title": "The lastName schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": "",
+      "examples": [
+        "Kurniawati"
+      ]
+    },
+    "age": {
+      "$id": "#/properties/age",
+      "type": "integer",
+      "title": "The age schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": 0,
+      "examples": [
+        23
+      ]
+    },
+    "occupation": {
+      "$id": "#/properties/occupation",
+      "type": "string",
+      "title": "The occupation schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": "",
+      "examples": [
+        "Quality Assurance"
+      ]
+    },
+    "nationality": {
+      "$id": "#/properties/nationality",
+      "type": "string",
+      "title": "The nationality schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": "",
+      "examples": [
+        "Indonesia"
+      ]
+    },
+    "hobbies": {
+      "$id": "#/properties/hobbies",
+      "type": "array",
+      "title": "The hobbies schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": [],
+      "examples": [
+        [
+          "Cooking"
+        ]
+      ],
+      "additionalItems": true,
+      "items": {
+        "$id": "#/properties/hobbies/items",
+        "anyOf": [
+          {
+            "$id": "#/properties/hobbies/items/anyOf/0",
+            "type": "string",
+            "title": "The first anyOf schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+              "Cooking"
+            ]
+          }
+        ]
+      }
+    },
+    "gender": {
+      "$id": "#/properties/gender",
+      "type": "string",
+      "title": "The gender schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": "",
+      "examples": [
+        "FEMALE"
+      ]
+    },
+    "createdDate": {
+      "$id": "#/properties/createdDate",
+      "type": "string",
+      "title": "The createdDate schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": "",
+      "examples": [
+        "2021-09-25T14:54:29.418"
+      ]
+    },
+    "updatedDate": {
+      "$id": "#/properties/updatedDate",
+      "type": "null",
+      "title": "The updatedDate schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": null,
+      "examples": [
+        null
+      ]
+    }
+  },
+  "additionalProperties": true
+}

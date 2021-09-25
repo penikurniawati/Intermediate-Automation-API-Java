@@ -1,0 +1,157 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "http://example.com/example.json",
+  "type": "object",
+  "title": "The root schema",
+  "description": "The root schema comprises the entire JSON document.",
+  "default": {},
+  "examples": [
+    {
+      "id": "78f4f75b-935e-4b5a-bb1a-e82ba71eb306",
+      "firstName": "Kurnia",
+      "lastName": "Koligrum",
+      "age": 23,
+      "occupation": "QA Engineer",
+      "nationality": "Indonesia",
+      "hobbies": [
+        "Cooking"
+      ],
+      "gender": "FEMALE",
+      "createdDate": "2021-09-25T22:46:40.045",
+      "updatedDate": "2021-09-25T23:19:20.548"
+    }
+  ],
+  "required": [
+    "id",
+    "firstName",
+    "lastName",
+    "age",
+    "occupation",
+    "nationality",
+    "hobbies",
+    "gender",
+    "createdDate",
+    "updatedDate"
+  ],
+  "properties": {
+    "id": {
+      "$id": "#/properties/id",
+      "type": "string",
+      "title": "The id schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": "",
+      "examples": [
+        "78f4f75b-935e-4b5a-bb1a-e82ba71eb306"
+      ]
+    },
+    "firstName": {
+      "$id": "#/properties/firstName",
+      "type": "string",
+      "title": "The firstName schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": "",
+      "examples": [
+        "Kurnia"
+      ]
+    },
+    "lastName": {
+      "$id": "#/properties/lastName",
+      "type": "string",
+      "title": "The lastName schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": "",
+      "examples": [
+        "Koligrum"
+      ]
+    },
+    "age": {
+      "$id": "#/properties/age",
+      "type": "integer",
+      "title": "The age schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": 0,
+      "examples": [
+        23
+      ]
+    },
+    "occupation": {
+      "$id": "#/properties/occupation",
+      "type": "string",
+      "title": "The occupation schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": "",
+      "examples": [
+        "QA Engineer"
+      ]
+    },
+    "nationality": {
+      "$id": "#/properties/nationality",
+      "type": "string",
+      "title": "The nationality schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": "",
+      "examples": [
+        "Indonesia"
+      ]
+    },
+    "hobbies": {
+      "$id": "#/properties/hobbies",
+      "type": "array",
+      "title": "The hobbies schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": [],
+      "examples": [
+        [
+          "Cooking"
+        ]
+      ],
+      "additionalItems": true,
+      "items": {
+        "$id": "#/properties/hobbies/items",
+        "anyOf": [
+          {
+            "$id": "#/properties/hobbies/items/anyOf/0",
+            "type": "string",
+            "title": "The first anyOf schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+              "Cooking"
+            ]
+          }
+        ]
+      }
+    },
+    "gender": {
+      "$id": "#/properties/gender",
+      "type": "string",
+      "title": "The gender schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": "",
+      "examples": [
+        "FEMALE"
+      ]
+    },
+    "createdDate": {
+      "$id": "#/properties/createdDate",
+      "type": "string",
+      "title": "The createdDate schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": "",
+      "examples": [
+        "2021-09-25T22:46:40.045"
+      ]
+    },
+    "updatedDate": {
+      "$id": "#/properties/updatedDate",
+      "type": "string",
+      "title": "The updatedDate schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": "",
+      "examples": [
+        "2021-09-25T23:19:20.548"
+      ]
+    }
+  },
+  "additionalProperties": true
+}
