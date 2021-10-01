@@ -1,8 +1,14 @@
 package com.koligrum.test.api;
 
-import com.koligrum.test.models.response.get_user_by_id.GetUserByIdResponse;
 import io.restassured.response.Response;
 
-public class DeleteUserEndpoint extends BaseRequest{
+public class DeleteUserEndpoint extends BaseRequest {
+
+  public Response deleteUser(String id) {
+    Response response = baseRequest()
+        .pathParam("id", id)
+        .when().delete("/users/{id}").then().log().all().extract().response();
+    return response;
+  }
 
 }

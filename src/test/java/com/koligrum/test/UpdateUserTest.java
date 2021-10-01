@@ -1,28 +1,47 @@
 package com.koligrum.test;
 
+import com.koligrum.test.api.CreateUserEndpoint;
+import com.koligrum.test.api.DeleteUserEndpoint;
 import com.koligrum.test.api.UpdateUserEndpoint;
+import com.koligrum.test.models.request.create_user.CreateUserRequest;
 import com.koligrum.test.models.request.update_user.UpdateserRequest;
 import com.koligrum.test.models.response.create_user.CreateUserResponse;
 import io.restassured.module.jsv.JsonSchemaValidator;
 import io.restassured.response.Response;
+import java.util.Collections;
 import org.hamcrest.MatcherAssert;
 import org.junit.Assert;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
-import java.util.Collections;
-
-import static io.restassured.RestAssured.given;
-
 public class UpdateUserTest {
-    final static String url = "http://localhost:1234";
+
     private UpdateUserEndpoint updateUserEndpoint = new UpdateUserEndpoint();
+    private CreateUserEndpoint createUserEndpoint = new CreateUserEndpoint();
+    private DeleteUserEndpoint deleteUserEndpoint = new DeleteUserEndpoint();
+    CreateUserResponse createUserResponse;
+
+    @BeforeEach
+    public void createUsers() {
+        CreateUserRequest requestBody2 = new CreateUserRequest();
+        requestBody2.setFirstName("Peni");
+        requestBody2.setLastName("Kurniawati");
+        requestBody2.setAge(23);
+        requestBody2.setOccupation("Quality Assurance");
+        requestBody2.setNationality("Indonesia");
+        requestBody2.setHobbies(Collections.singletonList("Cooking"));
+        requestBody2.setGender("FEMALE");
+        Response response = createUserEndpoint.createUser(requestBody2);
+        createUserResponse = response.as(CreateUserResponse.class);
+    }
 
     @Test
     @Tag("StatusCode200")
-    public void UpdateUserSuccess(){
+    public void UpdateUserSuccess() {
         UpdateserRequest requestBodyUpdate = new UpdateserRequest();
-        requestBodyUpdate.setId("78f4f75b-935e-4b5a-bb1a-e82ba71eb306");
+        requestBodyUpdate.setId(createUserResponse.getId());
         requestBodyUpdate.setFirstName("Kurnia");
         requestBodyUpdate.setLastName("Koligrum");
         requestBodyUpdate.setAge(23);
@@ -30,6 +49,7 @@ public class UpdateUserTest {
         requestBodyUpdate.setNationality("Indonesia");
         requestBodyUpdate.setHobbies(Collections.singletonList("Cooking"));
         requestBodyUpdate.setGender("FEMALE");
+
 
         Response response = updateUserEndpoint.updateUser(requestBodyUpdate);
 
@@ -80,7 +100,7 @@ public class UpdateUserTest {
     @Tag("StatusCode400")
     public void UpdateUserFailed(){
         UpdateserRequest requestBodyUpdate = new UpdateserRequest();
-        requestBodyUpdate.setId("3679acab-571f-4131-bb48-f8dfd264d135");
+        requestBodyUpdate.setId(createUserResponse.getId());
         requestBodyUpdate.setFirstName("Kurnia");
         requestBodyUpdate.setLastName("Koligrum");
         requestBodyUpdate.setAge(23);
@@ -93,6 +113,12 @@ public class UpdateUserTest {
 
         int statusCode = response.getStatusCode();
         Assert.assertEquals(400, statusCode);
+
+    }
+
+    @AfterEach
+    public void deleteUser() {
+        deleteUserEndpoint.deleteUser(createUserResponse.getId());
 
     }
 }
